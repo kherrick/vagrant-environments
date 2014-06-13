@@ -20,3 +20,11 @@ vagrant-laravel
 * To login to the virtual machine
   * `$ bin/vm ssh`
 
+* To see the site, browse to:
+  * [http://localhost:8000/](http://localhost:8000/)
+
+* Read more about Laravel development:
+  * [http://laravel.com/docs/quick](http://laravel.com/docs/quick)
+
+* For an alternative development environment, use Laravel Homestead:
+  * [http://laravel.com/docs/homestead](http://laravel.com/docs/homestead)

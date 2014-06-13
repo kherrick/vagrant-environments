@@ -1,6 +1,9 @@
 class laravel {
 
-    file { '/opt/vagrant-bootstrap/bin/laravel-init.sh':
+    require system
+    require dependencies
+
+    file { '/opt/vagrant-provision/bin/laravel-init.sh':
         source => 'puppet:///modules/laravel/laravel-init.sh',
         ensure => file,
         owner => 'root',
@@ -9,11 +12,13 @@ class laravel {
     }
 
     exec { 'laravel-init':
-        command => '/opt/vagrant-bootstrap/bin/laravel-init.sh',
-        creates => '/opt/vagrant-bootstrap/.laravel-init'
+        require => File['/opt/vagrant-provision/bin/laravel-init.sh'],
+        command => '/opt/vagrant-provision/bin/laravel-init.sh',
+        creates => '/opt/vagrant-provision/.laravel-init'
     }
 
-    file { '/opt/vagrant-bootstrap/bin/laravel-auto-start.sh':
+    file { '/opt/vagrant-provision/bin/laravel-auto-start.sh':
+        require => Exec['laravel-init'],
         source => 'puppet:///modules/laravel/laravel-auto-start.sh',
         ensure => file,
         owner => 'root',
@@ -22,12 +27,9 @@ class laravel {
     }
 
     exec { 'laravel-auto-start':
-        command => '/opt/vagrant-bootstrap/bin/laravel-auto-start.sh',
-        creates => '/opt/vagrant-bootstrap/.laravel-auto-start'
+        require => File ['/opt/vagrant-provision/bin/laravel-auto-start.sh'],
+        command => '/opt/vagrant-provision/bin/laravel-auto-start.sh',
+        creates => '/opt/vagrant-provision/.laravel-auto-start'
     }
-
-    File['/opt/vagrant-bootstrap/bin/laravel-init.sh']        -> Exec['laravel-init']
-    Exec['laravel-init']                                      -> File ['/opt/vagrant-bootstrap/bin/laravel-auto-start.sh']
-    File ['/opt/vagrant-bootstrap/bin/laravel-auto-start.sh'] -> Exec['laravel-auto-start']
 
 }

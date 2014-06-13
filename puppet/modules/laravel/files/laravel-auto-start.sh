@@ -13,11 +13,11 @@ cat <<EOF > /etc/rc.local
 # By default this script does nothing.
 
 while true; do
-    if [ -d /vagrant/laravel ]; then
-        cd /vagrant/laravel
-        php artisan serve --host 0.0.0.0 &
-        break;
-    fi
+  if [ -d /vagrant/laravel ]; then
+    cd /vagrant/laravel
+    php artisan serve --host 0.0.0.0 &
+    break;
+  fi
 done
 
 exit 0

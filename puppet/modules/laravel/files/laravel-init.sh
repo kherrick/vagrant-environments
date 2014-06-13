@@ -6,8 +6,8 @@ if [ ! -d /vagrant/laravel ]; then
       echo Creating the laravel project failed.
       exit 1
     else
-      touch /opt/vagrant-bootstrap/.laravel-init
+      touch /opt/vagrant-provision/.laravel-init
     fi
 else
-  touch /opt/vagrant-bootstrap/.laravel-init
+  touch /opt/vagrant-provision/.laravel-init
 fi
