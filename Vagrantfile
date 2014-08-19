@@ -4,10 +4,9 @@
 Vagrant.configure("2") do |config|
   config.vm.hostname = "erlang"
   config.vm.boot_timeout = 3600
-  config.vm.box = "debian-73-i386-virtualbox-puppet"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-i386-virtualbox-puppet.box"
+  config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
 
-  config.vm.network :forwarded_port, guest: 8082, host: 8082
+  config.vm.network :forwarded_port, guest: 80, host: 8888
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ["modifyvm", :id, "--memory", "1536"]
