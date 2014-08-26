@@ -28,7 +28,7 @@ vagrant-erlang
 * Shell commands targeted at the VM can run from within after ssh'ing inside of it, or from the host.
   * Example: from the host, try running `$ bin/vm rebar` from the project root.
 
-* Erlang was installed with `apt-get` from official Ubuntu sources and can be executed by running the `erl` command.
+* Erlang was built from source and can be executed by running the `erl` command.
 
 * Rebar was installed from [https://github.com/rebar/rebar](https://github.com/rebar/rebar) and can be executed by running the `rebar` command.
 
