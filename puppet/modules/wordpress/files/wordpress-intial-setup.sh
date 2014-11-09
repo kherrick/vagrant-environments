@@ -8,7 +8,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-curl http://wordpress.org/latest.tar.gz | tar xvz
+curl -L http://wordpress.org/latest.tar.gz | tar xvz
 
 if [ $? -ne 0 ]; then
   echo 'Downloading and decompressing WordPress failed.'
