@@ -1,8 +1,9 @@
 class fluxbox {
 
+    require system
     require xinit
 
-    package {'fluxbox':
+    package { 'fluxbox':
         ensure => installed
     }
 

@@ -1,8 +1,10 @@
 class pioneers {
 
+    require system
     require fluxbox
+    require xinit
 
-    package {'pioneers':
+    package { 'pioneers':
         ensure => installed
     }
 
