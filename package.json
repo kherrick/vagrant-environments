@@ -1,0 +1,31 @@
+{
+  "name": "babel-express-node-gulp",
+  "version": "0.0.1",
+  "description": "babel, express, node, gulp boilerplate",
+  "main": "app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "bin/gulp watch",
+    "develop": "bin/nodemon app/server/server.js",
+    "app": "node app/server/server.js"
+  },
+  "repository": "https://github.com/kherrick/babel-express-node-gulp.git",
+  "author": "Karl Herrick <me@karlherrick.com>",
+  "license": "AGPL-3.0",
+  "devDependencies": {
+    "babel": "~5.8.23",
+    "babel-eslint": "~4.1.2",
+    "eslint": "^1.4.3",
+    "eslint-config-strict": "^5.0.0",
+    "eslint-plugin-filenames": "^0.1.2",
+    "gulp": "~3.9.0",
+    "gulp-babel": "^5.2.1",
+    "gulp-shell": "~0.4.3",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-watch": "^4.3.5",
+    "nodemon": "~1.5.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "extends": ["strict"],
+  "rules": {
+    "newline-after-var": 0,
+    "prefer-const": 0,
+    "no-console": 0
+  },
+  "globals": {
+      "__dirname": false
+  }
+}
