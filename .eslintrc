@@ -8,7 +8,8 @@
   "rules": {
     "newline-after-var": 0,
     "prefer-const": 0,
-    "no-console": 0
+    "no-console": 0,
+    "no-invalid-this": 0,
   },
   "globals": {
       "__dirname": false

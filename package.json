@@ -1,7 +1,7 @@
 {
-  "name": "babel-express-node-gulp",
+  "name": "babel-koa-node-gulp",
   "version": "0.0.1",
-  "description": "babel, express, node, gulp boilerplate",
+  "description": "babel, koa, node, gulp boilerplate",
   "main": "app/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,7 +9,7 @@
     "develop": "bin/nodemon app/server/server.js",
     "app": "node app/server/server.js"
   },
-  "repository": "https://github.com/kherrick/babel-express-node-gulp.git",
+  "repository": "https://github.com/kherrick/babel-koa-node-gulp.git",
   "author": "Karl Herrick <me@karlherrick.com>",
   "license": "AGPL-3.0",
   "devDependencies": {
@@ -26,6 +26,10 @@
     "nodemon": "~1.5.1"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "co-views": "^2.1.0",
+    "ejs": "^2.3.4",
+    "koa": "^1.0.0",
+    "koa-route": "^2.4.2",
+    "koa-static": "^1.4.9"
   }
 }

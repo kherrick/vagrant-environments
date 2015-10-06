@@ -1,38 +1,35 @@
-const express = require('express');
+'use strict';
+
+const koa = require('koa');
 const path = require('path');
-const app = express();
+const route = require('koa-route');
+const serve = require('koa-static');
+const views = require('co-views');
+const app = module.exports = koa();
 
-
-// main page
-app.get('/', (req, res) => {
-  res.sendFile(
-    path.join(__dirname, '../public/index.html')
-  );
-});
-
-// public resources
-app.use(
-  express.static(
-    path.join(__dirname, '../public/')
-  )
+let render = views(
+  path.join(__dirname, '/views'),
+  { ext: 'ejs' }
 );
 
-// 404 page
-app.use((req, res) => {
-  res.type('text/plain');
-  res.status(404);
-  res.send('404');
-});
+let user = {
+  name: {
+    first: 'Peter',
+    last: 'Cottontail',
+  },
+  species: 'Rabbit',
+  age: 105,
+};
 
-// 500 page
-app.use((err, req, res) => {
-  console.error(err.stack);
-  res.type('text/plain');
-  res.status(500);
-  res.send('500');
-});
+function * index() {
+  this.body = yield render(
+    'index', { user }
+  );
+}
 
-// start listening
-app.listen('8081', 'localhost', () => {
-  console.log('Express started on http://localhost:8081');
-});
+app.use(route.get('/', index));
+app.use(serve('app/public'));
+
+if (!module.parent) {
+  app.listen(8081);
+}
