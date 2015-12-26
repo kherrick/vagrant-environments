@@ -51,7 +51,7 @@ class erlang {
         ensure => file,
         owner => 'root',
         group => 'root',
-        mode => 0755
+        mode => '0755'
     }
 
     exec { 'erlang':

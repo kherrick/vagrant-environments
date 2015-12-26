@@ -4,7 +4,8 @@
 Vagrant.configure("2") do |config|
   config.vm.hostname = "erlang"
   config.vm.boot_timeout = 3600
-  config.vm.box = "puppetlabs/ubuntu-14.04-64-puppet"
+  config.vm.box = "puppetlabs/ubuntu-14.04-32-puppet"
+  config.vm.box_version = "1.0.1"
 
   config.vm.network :forwarded_port, guest: 80, host: 8888
 

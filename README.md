@@ -33,6 +33,8 @@ erlang
 
 * Rebar was installed from [https://github.com/rebar/rebar](https://github.com/rebar/rebar) and can be executed by running the `rebar` command.
 
+* Elixir was built from source and can be executed by running the `elixir` command.
+
 ### Issues
 
 * Using the current setup, the puppet provisioner will issue warnings during the initial `bin/vm start`. See [https://github.com/mitchellh/vagrant/issues/3740](https://github.com/mitchellh/vagrant/issues/3740) for more information.

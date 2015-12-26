@@ -13,7 +13,7 @@ class system {
         ensure => directory,
         owner => 'root',
         group => 'root',
-        mode => 0755
+        mode => '0755'
     }
 
     file { '/opt/vagrant-provision/bin':
@@ -21,7 +21,7 @@ class system {
         ensure => directory,
         owner => 'root',
         group => 'root',
-        mode => 0755
+        mode => '0755'
     }
 
     file { '/opt/vagrant-provision/bin/vagrant-user-setup.sh':
@@ -30,7 +30,7 @@ class system {
         ensure => file,
         owner => 'root',
         group => 'root',
-        mode => 0755
+        mode => '0755'
     }
 
     exec { 'vagrant-user-setup':
