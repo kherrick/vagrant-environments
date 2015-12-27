@@ -1,5 +1,5 @@
-vagrant-nodejs
-================
+nodejs
+======
 
 ###To launch the VM and use Node.js
 
@@ -10,8 +10,9 @@ vagrant-nodejs
     * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to boot)
-  * `$ git clone https://github.com/kherrick/vagrant-nodejs`
-  * `$ cd vagrant-nodejs/`
+  * `$ git clone https://github.com/kherrick/vagrant-environments nodejs`
+  * `$ cd nodejs`
+  * `$ git checkout nodejs`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
