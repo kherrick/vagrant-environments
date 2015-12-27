@@ -1,5 +1,5 @@
-vagrant-erlang
-================
+erlang
+======
 
 ###To launch the VM and use Erlang
 
@@ -9,8 +9,9 @@ vagrant-erlang
   * Download `git` from: [http://git-scm.com/download](http://git-scm.com/download)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to boot)
-  * `$ git clone https://github.com/kherrick/vagrant-erlang`
-  * `$ cd vagrant-erlang/`
+  * `$ git clone https://github.com/kherrick/vagrant-environments erlang`
+  * `$ cd erlang`
+  * `$ git checkout erlang`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
