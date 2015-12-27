@@ -1,5 +1,5 @@
-vagrant-wordpress
-================
+wordpress
+=========
 
 ###To launch the VM and use WordPress
 
@@ -10,8 +10,9 @@ vagrant-wordpress
     * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to boot)
-  * `$ git clone https://github.com/kherrick/vagrant-wordpress`
-  * `$ cd vagrant-wordpress/`
+  * `$ git clone https://github.com/kherrick/vagrant-environments wordpress`
+  * `$ cd wordpress/`
+  * `$ git checkout wordpress`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
