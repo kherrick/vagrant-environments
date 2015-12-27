@@ -7,4 +7,5 @@ Checkout the various [branches within the repository](../../branches/all) to see
 * [laravel](../../tree/laravel)
 * [nodejs](../../tree/nodejs)
 * [pioneers](../../tree/pioneers)
+* [silex](../../tree/silex)
 * [wordpress](../../tree/wordpress)
