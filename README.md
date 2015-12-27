@@ -1,5 +1,5 @@
-vagrant-pioneers
-================
+pioneers
+========
 
 ###To play pioneers
 
@@ -10,8 +10,9 @@ vagrant-pioneers
     * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to download everything)
-  * `$ git clone https://github.com/kherrick/vagrant-pioneers`
-  * `$ cd vagrant-pioneers/`
+  * `$ git clone https://github.com/kherrick/vagrant-environments pioneers`
+  * `$ cd pioneers`
+  * `$ git checkout pioneers`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
