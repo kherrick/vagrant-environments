@@ -1,5 +1,5 @@
-vagrant-nodejs
-================
+nodejs-nodejsAngularTodo
+========================
 
 ###To launch the VM and use Node.js
 
@@ -10,9 +10,9 @@ vagrant-nodejs
     * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to boot)
-  * `$ git clone https://github.com/kherrick/vagrant-nodejs`
-  * `$ cd vagrant-nodejs/`
-  * `$ git checkout -b nodejsAngularTodo origin/nodejsAngularTodo`
+  * `$ git clone https://github.com/kherrick/vagrant-environments nodejs-nodejsAngularTodo`
+  * `$ cd nodejs-nodejsAngularTodo`
+  * `$ git checkout nodejs-nodejsAngularTodo`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
