@@ -1,5 +1,5 @@
-vagrant-laravel
-================
+laravel
+=======
 
 ###To launch the VM and use Laravel
 
@@ -10,8 +10,9 @@ vagrant-laravel
     * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
 * Clone the repository and start the virtual machine (the first time will take awhile to boot)
-  * `$ git clone https://github.com/kherrick/vagrant-laravel`
-  * `$ cd vagrant-laravel/`
+  * `$ git clone https://github.com/kherrick/vagrant-environments laravel`
+  * `$ cd laravel`
+  * `$ git checkout laravel`
   * `$ bin/vm start`
 
 * To turn off the virtual machine
