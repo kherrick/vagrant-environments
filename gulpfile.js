@@ -6,7 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task(
   'default',
-  [ 'watch' ]
+  [ 'watch-client', 'watch-server' ]
 );
 
 gulp.task('build', () => {
@@ -17,12 +17,12 @@ gulp.task('build', () => {
     .pipe(gulp.dest('app/public'));
 });
 
-gulp.task('watch', () => {
+gulp.task('watch-client', () => {
   watch('app/client/**/*.js', () => {
     gulp.start('build');
   });
 });
 
-gulp.task('develop',
+gulp.task('watch-server',
   shell.task('bin/nodemon app/server/server.js')
 );

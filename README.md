@@ -10,6 +10,6 @@ Interesting links:
 
 Startup:
 * `npm install`
-* `npm run watch` (watch and rebuild client side code)
-* `npm run develop` (watch and reload the server)
+* `npm run watch-client` (watch and rebuild client side code)
+* `npm run watch-server` (watch and reload the server)
 * Browse to http://localhost:8081
