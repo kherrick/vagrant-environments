@@ -31,5 +31,5 @@ app.use(route.get('/', index));
 app.use(serve('app/public'));
 
 if (!module.parent) {
-  app.listen(8081);
+  app.listen(8080);
 }

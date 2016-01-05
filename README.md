@@ -1,15 +1,37 @@
-README.md
-=========
+koa
+======
 
 A babel, koa, node, and gulp boilerplate.
 
-Interesting links:
+###Launch the virtual machine:
 
-* [using babel](https://babeljs.io/docs/setup/)
-* [lint like it's 2015](https://medium.com/@dan_abramov/lint-like-it-s-2015-6987d44c5b48)
+* Get the required dependencies:
+  * `Download Vagrant from:`
+    * [http://www.vagrantup.com/downloads.html](http://www.vagrantup.com/downloads.html)
+  * `Download VirtualBox and the Extension Pack from:`
+    * [https://www.virtualbox.org/](https://www.virtualbox.org/)
 
-Startup:
-* `npm install`
-* `npm run watch-client` (watch and rebuild client side code)
-* `npm run watch-server` (watch and reload the server)
-* Browse to http://localhost:8081
+* Clone the repository and start the virtual machine (the first time will take awhile to boot)
+  * `$ git clone https://github.com/kherrick/vagrant-environments koa`
+  * `$ cd koa`
+  * `$ git checkout koa`
+  * `$ bin/vm start`
+
+* To turn off the virtual machine
+  * `$ bin/vm stop`
+
+* To login to the virtual machine
+  * `$ bin/vm ssh`
+
+###Install other dependencies:
+
+* `bin/vm npm install`
+
+###To develop against the boilerplate:
+
+* Launch a terminal and execute: `bin/vm npm run watch-client` (watch and rebuild client side code)
+* Launch another terminal and execute: `bin/vm npm run watch-server` (watch and reload the server)
+
+###To run the project
+
+* `bin/vm npm run app`
