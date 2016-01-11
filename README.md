@@ -29,9 +29,12 @@ A babel, koa, node, and gulp boilerplate.
 
 ###To develop against the boilerplate:
 
-* Launch a terminal and execute: `bin/vm npm run watch-client` (watch and rebuild client side code)
-* Launch another terminal and execute: `bin/vm npm run watch-server` (watch and reload the server)
+* Launch a terminal and execute: `bin/vm npm run build` (build client and server side)
 
 ###To run the project
 
 * `bin/vm npm run app`
+
+###To view the project in a browser
+
+* Browse to [http://localhost:8080/](http://localhost:8080/)
