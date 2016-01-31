@@ -1,4 +1,5 @@
 include system
-include mysql
 include apache
+include mysql
+include php
 include wordpress

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
+APACHE_ROOT=/var/www/html
 
-cd /var/www
+cd $APACHE_ROOT || exit
 rm index.html
 
 if [ $? -ne 0 ]; then
@@ -8,7 +9,7 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-curl -L http://wordpress.org/latest.tar.gz | tar xvz
+curl -L https://wordpress.org/wordpress-4.4.2.tar.gz | tar xvz
 
 if [ $? -ne 0 ]; then
   echo 'Downloading and decompressing WordPress failed.'
@@ -29,10 +30,10 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
-chown -R www-data:www-data /var/www
+chown -R vagrant:vagrant $APACHE_ROOT
 
 if [ $? -ne 0 ]; then
-  echo 'Recursively changing the user and group of /var/www to www-data:www-data failed.'
+  echo "Recursively changing the user and group of $APACHE_ROOT to www-data:www-data failed."
   exit 1
 fi
 

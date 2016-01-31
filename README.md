@@ -24,7 +24,12 @@ wordpress
 * Browse to the site
   * [http://localhost:8080](http://localhost:8080)
 
-* Default username/password
-  * `vagrant`
+* Default credentials for WordPress:
+  * username: `vagrant`
+  * password: `vagrant`
 
-* WordPress can be found within the virtual machine at `/var/www/`
+* Default credentials for MySQL:
+  * username: `root`
+  * password: `vagrant`
+
+* WordPress can be found within the virtual machine at `/var/www/html/`

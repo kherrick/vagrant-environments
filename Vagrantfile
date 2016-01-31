@@ -3,21 +3,19 @@
 
 Vagrant.configure("2") do |config|
   config.vm.hostname = "wordpress"
-  config.vm.boot_timeout = 3600
-  config.vm.box = "debian-73-i386-virtualbox-puppet"
-  config.vm.box_url = "http://puppet-vagrant-boxes.puppetlabs.com/debian-73-i386-virtualbox-puppet.box"
-
+  config.vm.box = "puppetlabs/ubuntu-14.04-32-puppet-enterprise"
   config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.box_check_update = false
+  config.vm.box_version = "1.0.1"
 
   config.vm.provider :virtualbox do |vb|
-    vb.customize ["modifyvm", :id, "--memory", "1536"]
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+    vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
   end
 
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "puppet/"
     puppet.manifest_file  = "site.pp"
     puppet.module_path    = "puppet/modules/"
-    # puppet.options        = "--verbose --debug"
   end
-
 end

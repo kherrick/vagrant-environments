@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-helper ()
-{
-  if [ $# -gt 0 ] && [ $1 != "-" ]; then
-    echo $0: illegal option -- $@
+helper() {
+  if [ $# -gt 0 ] && [ "$1" != "-" ]; then
+    echo "$0": illegal option -- "$@"
   fi
 
   echo "usage: $0 commands"
@@ -25,11 +24,22 @@ helper ()
   exit 1
 }
 
+vagrantCheck() {
+  check=$(which vagrant > /dev/null 2>&1; echo $?)
+
+  if [ "$check" != "0" ]; then
+    echo "Vagrant is a required dependency: https://www.vagrantup.com/downloads.html"
+    exit 1
+  fi
+}
+
+vagrantCheck
+
 bash_source="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd $bash_source/..
+cd "$bash_source/.." || exit
 
 if [ $# -eq 0 ]; then
-  helper
+  helper "$@"
 else
   case $1 in
     destroy)
@@ -54,8 +64,7 @@ else
       vagrant halt
       ;;
     *)
-      vagrant ssh -- "cd /vagrant; $@"
+      vagrant ssh -- "cd /vagrant; $*"
       ;;
   esac
 fi
-

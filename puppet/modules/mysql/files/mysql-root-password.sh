@@ -15,3 +15,4 @@ if [ $? -ne 0 ]; then
   exit 1
 fi
 
+touch /opt/vagrant-provision/.mysql-root-password

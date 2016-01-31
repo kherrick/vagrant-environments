@@ -3,10 +3,7 @@ class wordpress {
     require system
     require apache
     require mysql
-
-    package { 'apache2-mpm-prefork':
-        ensure => installed
-    }
+    require php
 
     package { 'fontconfig-config':
         ensure => installed
@@ -16,15 +13,11 @@ class wordpress {
         ensure => installed
     }
 
-    package { 'libapache2-mod-php5':
-        ensure => installed
-    }
-
     package { 'libfontconfig1':
         ensure => installed
     }
 
-    package { 'libgd2-xpm':
+    package { 'libgd2-xpm-dev':
         ensure => installed
     }
 
@@ -48,14 +41,6 @@ class wordpress {
         ensure => installed
     }
 
-    package { 'libphp-phpmailer':
-        ensure => installed
-    }
-
-    package { 'libphp-snoopy':
-        ensure => installed
-    }
-
     package { 'libpng12-0':
         ensure => installed
     }
@@ -68,35 +53,11 @@ class wordpress {
         ensure => installed
     }
 
-    package { 'php5':
-        ensure => installed
-    }
-
-    package { 'php5-cli':
-        ensure => installed
-    }
-
-    package { 'php5-common':
-        ensure => installed
-    }
-
-    package { 'php5-gd':
-        ensure => installed
-    }
-
-    package { 'php5-mysql':
-        ensure => installed
-    }
-
     package { 'tinymce':
         ensure => installed
     }
 
     package { 'ttf-dejavu-core':
-        ensure => installed
-    }
-
-    package { 'wwwconfig-common':
         ensure => installed
     }
 
@@ -123,20 +84,13 @@ class wordpress {
         creates => '/opt/vagrant-provision/.wordpress-intial-setup'
     }
 
-    file { '/opt/vagrant-provision/bin/create-wp-config.sh':
+    file { '/var/www/html/wp-config.php':
         require => Exec['wordpress-intial-setup'],
-        source => 'puppet:///modules/wordpress/create-wp-config.sh',
+        source => 'puppet:///modules/wordpress/wp-config.php',
         ensure => file,
-        owner => 'root',
-        group => 'root',
-        mode => 0755
-    }
-
-    exec { 'create-wp-config':
-        require => File['/opt/vagrant-provision/bin/create-wp-config.sh'],
-        command => '/opt/vagrant-provision/bin/create-wp-config.sh',
-        creates => '/opt/vagrant-provision/.create-wp-config'
+        owner => 'vagrant',
+        group => 'vagrant',
+        mode => 0644
     }
 
 }
-
